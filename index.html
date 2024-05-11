@@ -885,7 +885,9 @@ font-family: var(--button-font);
         height: 100%;
         object-fit: contain;
     }
-
+ .fa-bars{
+    display: none;
+ }
     .menus ul {
         display: flex;
         column-gap: 20px;
@@ -1893,6 +1895,22 @@ font-family: var(--button-font);
     @media screen and (max-width:576px) {
    .header-content{
     display: flex;
+    background-color: red;
+   }
+   .logo{
+ flex-grow: 2;
+   }
+   .menus{
+  flex-grow: 1;
+   }
+   .fa-bars{
+    display: block;
+   }
+   .menus ul{
+    display: none;
+   }
+   .headbtn{
+ flex-grow: 3;
    }
 
     }
@@ -2172,9 +2190,10 @@ font-family: var(--button-font);
                 <div class="head-con logo">
                     <img src="img/logo.jpeg" alt="" width="20px">
                    
-                    <h2>AviTech</h2>
+                    <h3>AviTech</h3>
                 </div>
                 <div class="head-con menus">
+                    <i class="fa-solid fa-bars"></i>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
