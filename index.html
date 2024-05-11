@@ -40,7 +40,11 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
+        overflow: hidden;
        
+    }
+    .headbot{
+        display: none;
     }
 
     /* login start */
@@ -842,6 +846,7 @@
     .mid-content {
         height: auto;
         width: 100%;
+        
     }
 
     /* mid content close */
@@ -1894,23 +1899,24 @@ font-family: var(--button-font);
     /* responsive  	≥576px */
     @media screen and (max-width:576px) {
    .header-content{
-    display: flex;
+   display: flex;
     background-color: red;
    }
    .logo{
- flex-grow: 2;
+    order: 2;
    }
    .menus{
-  flex-grow: 1;
+    order: 1;
    }
    .fa-bars{
     display: block;
+    font-size: 30px;
    }
    .menus ul{
     display: none;
    }
    .headbtn{
- flex-grow: 3;
+ order: 3;
    }
 
     }
@@ -2214,7 +2220,8 @@ font-family: var(--button-font);
             </div>
         </header>
         <!-- header close -->
-
+ <!-- header ke nicheka -->
+ <div class="headbot">
         <!-- sub header -->
         <div class="hedcontent">
 
@@ -2261,6 +2268,7 @@ font-family: var(--button-font);
         </div>
         <!-- sub header close -->
 
+       
         <!-- front section -->
         <div class="section">
             <div class="section-content">
@@ -2735,7 +2743,8 @@ font-family: var(--button-font);
 
 
         </div>
-
+        <!-- head bot khatam -->
+    </div>
     </div>
     <!-- cart section close -->
 
