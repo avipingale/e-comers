@@ -1924,18 +1924,36 @@ font-family: var(--button-font);
         width: 300px;
         height: 550px;
     }
+    .cart {
+        width: 300px;
+        height: 600px;
+    }
+    .container {
+        max-width: 340px;
+        height: 600px;
+        
+    }
+    
+
+    .hedcontent {
+       
+        display: grid;
+        grid-template-columns: 40px repeat(1, 1fr) 40px;
+    
+    }
 
     .content-topic ul {
-      font-size: 10px;
+      font-size: 14px;
     }
+
 
 }
 
-@media screen and (max-width:549px){
+/* @media (min-width:300px) and (max-width:549px){
     .content-topic ul {
-      font-size: 6px;
+      font-size: 8px;
     }
-}
+} */
 
 </style>
 
@@ -3060,7 +3078,7 @@ font-family: var(--button-font);
         Cart_Open_Btn.addEventListener('click', (e) => {
             e.preventDefault();
             Cart_Container.style.cssText = "display:flex;transition:.5s ease-in";
-            mid_content.style.filter = "blur(2px)";
+            // mid_content.style.filter = "blur(2px)";
 
         })
         Close_Cart.addEventListener('click', (e) => {
@@ -3219,6 +3237,14 @@ font-family: var(--button-font);
             mid_content.style.filter = "blur(0px)";
         })
 
+        let payment_back = document.getElementsByClassName('paymentclose')[0].children[0];
+       
+        payment_back.addEventListener('click', () => {
+            payment_screen.style.cssText = "display:none;transition:.5s ease-in";
+            mid_content.style.filter = "blur(0px)";
+        })
+        
+
     }
 
     function cartpayitme() {
@@ -3343,7 +3369,7 @@ font-family: var(--button-font);
 
                     product_con.innerHTML = productContent;
                     buysystem();
-                    // paymentitme()
+                   
                 }
 
                 // for notes and books
