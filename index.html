@@ -1945,7 +1945,36 @@ font-family: var(--button-font);
     .content-topic ul {
       font-size: 12px;
     }
+    .section {
+        /*margin-top: 20px;*/
+        width: 100%;
+        height: 240px;
+       
+    }
 
+    .section-content {
+        font-size: .5rem;
+    }
+
+    .section-info {
+       
+        font-weight: 500;
+        line-height: 1.2;
+       
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .section-info h1{
+        font-size: 20px;
+    }
+    .animation{
+        width: 50%;
+    }
+    lottie-player {
+        width: 227px;
+        margin-left: 50px;
+    }
 
 }
 
@@ -2301,8 +2330,7 @@ font-family: var(--button-font);
         </div>
         <!-- sub header close -->
 
-        <!-- header ke nicheka -->
- <div class="headbot">
+       
         <!-- front section -->
         <div class="section">
             <div class="section-content">
@@ -2335,7 +2363,8 @@ font-family: var(--button-font);
         </div>
 
         <!-- front section close     -->
-
+ <!-- header ke nicheka -->
+ <div class="headbot">
         <!-- moving banner -->
 
         <div class="mainbanner">
@@ -3512,6 +3541,28 @@ font-family: var(--button-font);
 
     // single product system close
 
+    window.addEventListener('resize',function(){
+       
+        let window_width=window.innerWidth;
+        if(window_width<576){
+            searchbarw();
+        }else{
+
+            let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
+    let content =document.getElementsByClassName('content-topic')[0];
+    let homebtn=document.getElementsByClassName('homel')[0];
+  
+       
+    searchbtn.style.opacity = "1";
+
+    searchbtn.addEventListener('click', () => {
+        searchbar.classList.toggle("search-borderstyle");
+        searchbar.style.css=("grid template-colum:repat(3 1fr)")
+        content.style.display="block"
+    })
+        }
+        
+    })
     // search bar 
     let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
     searchbtn.style.opacity = "1";
@@ -3519,6 +3570,25 @@ font-family: var(--button-font);
     searchbtn.addEventListener('click', () => {
         searchbar.classList.toggle("search-borderstyle");
     })
+   
+
+    function searchbarw(){
+    let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
+    let content =document.getElementsByClassName('content-topic')[0];
+    let homebtn=document.getElementsByClassName('homel')[0];
+    console.log("calin")
+       
+    searchbtn.style.opacity = "1";
+
+    searchbtn.addEventListener('click', () => {
+        searchbar.classList.toggle("search-borderstyle");
+        searchbar.style.css=("grid template-colum:1fr")
+        content.style.display="none"
+    })
+    }
+
+ 
+
     // search bar close
 
     // counter
