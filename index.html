@@ -2910,20 +2910,28 @@ font-family: var(--button-font);
 
         })
 
-        // document.getElementsByClassName('fa-regular')[1].addEventListener('mousedown', () => {
-        //     document.getElementById('passw').setAttribute('type', 'text');
-        //     document.getElementsByClassName('fa-regular')[1].className = "fa-regular fa-eye";
-        // })
-        // document.getElementsByClassName('fa-regular')[1].addEventListener('mouseup', () => {
-        //     document.getElementById('passw').setAttribute('type', 'password');
-        //     document.getElementsByClassName('fa-regular')[1].className = " fa-eye-slash";
-        // })
+   
 
         let paswordeye= document.getElementsByClassName('fa-regular')[1];
         paswordeye.addEventListener('click',()=>{
   let eye=document.getElementsByClassName('fa-regular')[1];
       eye.classList.toggle('fa-eye')
+      paswwordeye();
         })
+
+
+
+
+ function paswwordeye(){
+    var type_change = document.getElementById('passw');
+
+    if(type_change.getAttribute('type')=='password')
+    {
+        type_change.setAttribute('type','text');
+    }else{
+        type_change.setAttribute('type','password');
+    }   
+ }
 
 
     }
