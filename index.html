@@ -2852,7 +2852,8 @@ font-family: var(--button-font);
         grid-template-columns: 20px 1fr;
 
     }
-   
+    
+    
     .search-borderstyle-size{
         width: 100%;
        
@@ -2909,11 +2910,11 @@ font-family: var(--button-font);
 
         })
 
-        document.getElementsByClassName('fa-regular')[1].addEventListener('click', () => {
+        document.getElementsByClassName('fa-regular')[1].addEventListener('mousedown', () => {
             document.getElementById('passw').setAttribute('type', 'text');
             document.getElementsByClassName('fa-regular')[1].className = "fa-regular fa-eye";
         })
-        document.getElementsByClassName('fa-regular')[1].addEventListener('click', () => {
+        document.getElementsByClassName('fa-regular')[1].addEventListener('mouseup', () => {
             document.getElementById('passw').setAttribute('type', 'password');
             document.getElementsByClassName('fa-regular')[1].className = "fa-regular fa-eye-slash";
         })
@@ -3584,7 +3585,7 @@ font-family: var(--button-font);
         }else{
             
             document.getElementsByClassName('hcon content-topic')[0].style.display="block";
-            document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='repeat(3,1fr)';
+            document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='40px 1fr 40px';
             searchbtn.addEventListener('click',searcbars);
             searchbtn.removeEventListener('click',small_searcbar);
         }
