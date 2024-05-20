@@ -2909,11 +2909,11 @@ font-family: var(--button-font);
 
         })
 
-        document.getElementsByClassName('fa-regular')[1].addEventListener('mousedown', () => {
+        document.getElementsByClassName('fa-regular')[1].addEventListener('click', () => {
             document.getElementById('passw').setAttribute('type', 'text');
             document.getElementsByClassName('fa-regular')[1].className = "fa-regular fa-eye";
         })
-        document.getElementsByClassName('fa-regular')[1].addEventListener('mouseup', () => {
+        document.getElementsByClassName('fa-regular')[1].addEventListener('click', () => {
             document.getElementById('passw').setAttribute('type', 'password');
             document.getElementsByClassName('fa-regular')[1].className = "fa-regular fa-eye-slash";
         })
