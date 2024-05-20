@@ -121,7 +121,7 @@
     .input {
         border-bottom: 1px solid black;
         display: grid;
-        grid-template-columns: 20px 1fr 20px;
+        grid-template-columns: 20px 1fr 20px ;
         text-align: left;
         align-items: center;
     }
@@ -2847,7 +2847,17 @@ font-family: var(--button-font);
 
 
 
+<style>
+    .subhadcontent{
+        grid-template-columns: 20px 1fr;
 
+    }
+   
+    .search-borderstyle-size{
+        width: 100%;
+       
+    }
+</style>
 
 
 <script>
@@ -3560,50 +3570,65 @@ font-family: var(--button-font);
     // single product system close
 
     window.addEventListener('resize',function(){
-       
-        let window_width=window.innerWidth;
-        if(window_width<576){
-            searchbarw();
-        }else{
-
+        var winWidth = window.innerWidth;
+        if(winWidth<576)
+        {
+            
+           
             let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
-    let content =document.getElementsByClassName('content-topic')[0];
-    let homebtn=document.getElementsByClassName('homel')[0];
-  
-       
-    searchbtn.style.opacity = "1";
-
-    searchbtn.addEventListener('click', () => {
-        searchbar.classList.toggle("search-borderstyle");
-        searchbar.style.css=("grid template-colum:repat(3 1fr)")
-        content.style.display="block"
-    })
+          
+            searchbtn.removeEventListener('click',searcbars);
+            
+            searchbtn.addEventListener('click',small_searcbar);
+            
+        }else{
+            
+            document.getElementsByClassName('hcon content-topic')[0].style.display="block";
+            document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='repeat(3,1fr)';
+            searchbtn.addEventListener('click',searcbars);
+            searchbtn.removeEventListener('click',small_searcbar);
         }
-        
     })
+
+
+
+
+    
     // search bar 
     let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
     searchbtn.style.opacity = "1";
     let searchbar = document.getElementsByClassName('searchBar')[0];
-    searchbtn.addEventListener('click', () => {
+    searchbtn.addEventListener('click',searcbars);
+    function searcbars(){
         searchbar.classList.toggle("search-borderstyle");
-    })
+    }
+
+    function small_searcbar()
+    {
+        let searchbar = document.getElementsByClassName('searchBar')[0];
+        searchbar.classList.toggle("search-borderstyle");
+        var menu = document.getElementsByClassName('hcon content-topic')[0];
+        if(menu.style.display=="none")
+        {
+            menu.style.display="block";
+        }else{
+            menu.style.display="none";
+
+        }
+        var frames = document.getElementsByClassName('hedcontent')[0];
+        var search = document.getElementsByClassName('searchBar')[0];
+        search.classList.toggle('search-borderstyle-size');
+        frames.classList.toggle('subhadcontent');
+        // if(frames.=='1fr 360px')
+        // {
+        //     frames.style.gridTemplateColumns='1fr 360px';
+        // }else{
+        //     frames.style.gridTemplateColumns='repeat(3,1fr)';
+
+        // }
+    }
    
 
-    function searchbarw(){
-    let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
-    let content =document.getElementsByClassName('content-topic')[0];
-    let homebtn=document.getElementsByClassName('homel')[0];
-    console.log("calin")
-       
-    searchbtn.style.opacity = "1";
-
-    searchbtn.addEventListener('click', () => {
-        searchbar.classList.toggle("search-borderstyle");
-        searchbar.style.css=("grid template-colum:1fr")
-        content.style.display="none"
-    })
-    }
 
  
 
