@@ -2042,7 +2042,8 @@ font-family: var(--button-font);
        
 }
 .why-title{
-font-size: 14px;
+font-size: 9px;
+padding: 15px;
 }
 .why-content {
         flex-grow: 1;
@@ -2057,12 +2058,36 @@ font-size: 14px;
 
     .why-box {
         width: 200px;
-        height: 200px;
-        
-      
+        height: 130px;
         grid-template-columns: repeat(1, 1fr);
        
     }
+   
+    .wbicons i {
+        font-size: 30px;
+        margin-top: -20px;
+        padding: 0px 5px;
+    }
+
+    .why-box:hover .wbicons i {
+        font-size: 35px;
+        transition: .3s ease-in-out;
+    }
+
+    .wbtitle {
+        margin-top: 25px;
+        padding: 0px 10px;
+    }
+
+    .wbtitle h3 {
+        letter-spacing: 1px;
+        font-size: 15px;
+    }
+
+    .wbtitle p {
+        font-size: 11px;
+    }
+
 }
 
 /* @media (min-width:300px) and (max-width:549px){
