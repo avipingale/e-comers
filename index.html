@@ -1260,11 +1260,11 @@ font-family: var(--button-font);
         box-shadow: 0px 1px 5px 4px rgba(0, 0, 0, 0.2);
         transition:.6s ease-in-out;
     }
-    .bproject{
+    /* .bproject{
         transform: perspective(600px) rotateY(180deg);
         backface-visibility: hidden;
         transition: .6s ease-in-out;
-    }
+    } */
    
 
     .bimg {
@@ -2020,7 +2020,12 @@ font-family: var(--button-font);
     width: 8px;
     height: 8px;
 }
-
+   .box{
+  border: 1px solid var(--btn-hover-color);
+   }
+   .project-content, .notes-content, .books-content {
+    grid-template-columns: repeat(1, 1fr);
+   }
 
 }
 
@@ -2430,8 +2435,7 @@ font-family: var(--button-font);
 
         </div>
         <!-- moving banner close -->
- <!-- header ke nicheka -->
- <div class="headbot">  
+ 
         <!-- projects books notes section -->
         <div class="content">
             <div class="ptitle">
@@ -2615,7 +2619,8 @@ font-family: var(--button-font);
             </div>
         </div>
         <!-- project book notes section close -->
-
+<!-- header ke nicheka -->
+<div class="headbot">  
         <!-- why box -->
         <div class="why">
             <div class="why-title">
@@ -3817,104 +3822,104 @@ font-family: var(--button-font);
     //  banner slider close
 
     //  content animation 
-    window.addEventListener('scroll', contentanimeation)
-    function contentanimeation() {
-        // titles animation
-        let titles = document.getElementsByClassName('ptitle');
-        for (let i = 0; i < titles.length; i++) {
-            var iHeight = window.innerHeight;
-            var containerHeight = titles[i].getBoundingClientRect().top;
-            var compnentMinus = 200;
-            if (containerHeight > iHeight - compnentMinus) {
-                titles[i].style.transform = "translateX(-100%)";
-                titles[i].style.opacity = "0";
+    // window.addEventListener('scroll', contentanimeation)
+    // function contentanimeation() {
+    //     // titles animation
+    //     let titles = document.getElementsByClassName('ptitle');
+    //     for (let i = 0; i < titles.length; i++) {
+    //         var iHeight = window.innerHeight;
+    //         var containerHeight = titles[i].getBoundingClientRect().top;
+    //         var compnentMinus = 200;
+    //         if (containerHeight > iHeight - compnentMinus) {
+    //             titles[i].style.transform = "translateX(-100%)";
+    //             titles[i].style.opacity = "0";
 
 
-            }
-            else {
-                titles[i].style.transform = "translateX(0%)";
-                titles[i].style.opacity = "1";
+    //         }
+    //         else {
+    //             titles[i].style.transform = "translateX(0%)";
+    //             titles[i].style.opacity = "1";
 
-            }
+    //         }
 
-        }
+    //     }
         //    titles animation close
 
-        // product animation
-        let product = document.getElementsByClassName('box');
-        for (let i = 0; i < product.length; i++) {
-            let contentheight = product[i].getBoundingClientRect().top;
-            let contenm = 200;
-            var iHeight = window.innerHeight;
+    //     // product animation
+    //     let product = document.getElementsByClassName('box');
+    //     for (let i = 0; i < product.length; i++) {
+    //         let contentheight = product[i].getBoundingClientRect().top;
+    //         let contenm = 200;
+    //         var iHeight = window.innerHeight;
             
-            if (i >=0 && i<=2) {
-                if (contentheight > iHeight - contenm) {
+    //         if (i >=0 && i<=2) {
+    //             if (contentheight > iHeight - contenm) {
                     
-                    product[i].style. transform="perspective(600px) rotateY(180deg)";
-                    
-                    
+    //                 product[i].style. transform="perspective(600px) rotateY(180deg)";
                     
                     
-                }
-                else {
-                    
-                    product[i].style. transform="perspective(600px) rotateY(0deg)";
                     
                     
-                }
+    //             }
+    //             else {
+                    
+    //                 product[i].style. transform="perspective(600px) rotateY(0deg)";
+                    
+                    
+    //             }
 
                
 
-            }
+    //         }
 
-            let notesm = 100;
+    //         let notesm = 100;
 
-            if (i >=3 && i<=5) {
-                if (contentheight > iHeight - notesm) {
+    //         if (i >=3 && i<=5) {
+    //             if (contentheight > iHeight - notesm) {
 
-                   if(i==3) 
-                    product[i].style.transform = "translateX(-100%)";
+    //                if(i==3) 
+    //                 product[i].style.transform = "translateX(-100%)";
                     
-                    if(i==4) 
-                    product[i].style.scale="0";
+    //                 if(i==4) 
+    //                 product[i].style.scale="0";
 
-                    if(i==5) 
-                    product[i].style.transform = "translateX(100%)";
+    //                 if(i==5) 
+    //                 product[i].style.transform = "translateX(100%)";
                       
-                }
-                else{
-                    product[i].style. transform="translateX(0%)";
-                    product[i].style.scale="1";
-                    product[i].style.transform = "translateX(0%)";
+    //             }
+    //             else{
+    //                 product[i].style. transform="translateX(0%)";
+    //                 product[i].style.scale="1";
+    //                 product[i].style.transform = "translateX(0%)";
 
                     
-                }
+    //             }
                
 
                
 
-            }
+    //         }
            
 
 
-            if (i >=6 && i<=8) {
-                if (contentheight > iHeight - contenm) {
+    //         if (i >=6 && i<=8) {
+    //             if (contentheight > iHeight - contenm) {
                  
-                    product[i].style.opacity = "0";
+    //                 product[i].style.opacity = "0";
 
 
-                }
-                else {
+    //             }
+    //             else {
                 
-                    product[i].style.opacity = "1";
+    //                 product[i].style.opacity = "1";
 
-                }
+    //             }
 
-            }
-        }
+    //         }
+    //     }
 
 
-    }
+    // }
 
 
 </script>
