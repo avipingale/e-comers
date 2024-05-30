@@ -2961,7 +2961,7 @@ font-size: 9px;
                 <div class="head-con menus">
                     <i class="fa-solid fa-bars"></i>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="help.html">Help</a></li>
                         <!-- <li><a href="#">Privacy Policy</a></li> -->
@@ -2993,7 +2993,7 @@ font-size: 9px;
                     <li><a href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
                         <ul>
                             <li><a href="#">Mini Projects</a></li>
-                            <li><a href="#">Mejor Projects</a></li>
+                            <li><a href="#">Major Projects</a></li>
                             <li><a href="#">Free Projects</a></li>
 
                         </ul>
@@ -4370,24 +4370,26 @@ font-size: 9px;
 
     // single product system close
 
-    let ww=  window.innerWidth;
-    if(ww<=576){
-        let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
+    // let ww=  window.innerWidth;
+    // if(ww<=576){
+    //     let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
           
-            searchbtn.removeEventListener('click',searcbars);
+    //         searchbtn.removeEventListener('click',searcbars);
             
-            searchbtn.addEventListener('click',small_searcbar);
-    let searchbar = document.getElementsByClassName('searchBar')[0];
-    searchbar.classList.toggle("search-borderstyle");
+    //         searchbtn.addEventListener('click',small_searcbar);
+    // let searchbar = document.getElementsByClassName('searchBar')[0];
+    // searchbar.classList.toggle("search-borderstyle");
 
 
-      }
-      else{
-        document.getElementsByClassName('hcon content-topic')[0].style.display="block";
-            document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='40px 1fr 40px';
-            searchbtn.addEventListener('click',searcbars);
-            searchbtn.removeEventListener('click',small_searcbar);
-      }
+    //   }
+    //   else{
+    //     let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
+
+    //     document.getElementsByClassName('hcon content-topic')[0].style.display="block";
+    //         document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='40px 1fr 40px';
+    //         searchbtn.addEventListener('click',searcbars);
+    //         searchbtn.removeEventListener('click',small_searcbar);
+    //   }
     window.addEventListener('resize',function(){
         var winWidth = window.innerWidth;
         if(winWidth<576)
@@ -4438,13 +4440,7 @@ font-size: 9px;
         var search = document.getElementsByClassName('searchBar')[0];
         search.classList.toggle('search-borderstyle-size');
         frames.classList.toggle('subhadcontent');
-        // if(frames.=='1fr 360px')
-        // {
-        //     frames.style.gridTemplateColumns='1fr 360px';
-        // }else{
-        //     frames.style.gridTemplateColumns='repeat(3,1fr)';
-
-        // }
+      
     }
    
 
