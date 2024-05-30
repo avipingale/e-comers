@@ -4366,8 +4366,9 @@ font-size: 9px;
     }
 
     // single product system close
+    
     let ww=  window.innerWidth;
-    if(ww==576){
+    if(ww<=576){
         let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
           
             searchbtn.removeEventListener('click',searcbars);
