@@ -3657,7 +3657,7 @@ font-size: 9px;
         signinsystem();
         productsystem()
         moveSignUp();
-        contentanimeation()
+        // contentanimeation()
     })
     // preloader close
 
@@ -4366,7 +4366,7 @@ font-size: 9px;
     }
 
     // single product system close
-    
+
     let ww=  window.innerWidth;
     if(ww<=576){
         let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
@@ -4374,6 +4374,10 @@ font-size: 9px;
             searchbtn.removeEventListener('click',searcbars);
             
             searchbtn.addEventListener('click',small_searcbar);
+    let searchbar = document.getElementsByClassName('searchBar')[0];
+    searchbar.classList.toggle("search-borderstyle");
+
+
       }
       else{
         console.log("fallse")
