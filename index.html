@@ -2050,6 +2050,7 @@ font-family: var(--button-font);
 }
    .box{
   border: 1px solid var(--btn-hover-color);
+  width: 340px;
    }
    .project-content, .notes-content, .books-content {
     grid-template-columns: repeat(1, 1fr);
@@ -4380,8 +4381,10 @@ font-size: 9px;
 
       }
       else{
-        console.log("fallse")
-       
+        document.getElementsByClassName('hcon content-topic')[0].style.display="block";
+            document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='40px 1fr 40px';
+            searchbtn.addEventListener('click',searcbars);
+            searchbtn.removeEventListener('click',small_searcbar);
       }
     window.addEventListener('resize',function(){
         var winWidth = window.innerWidth;
