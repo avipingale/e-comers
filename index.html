@@ -1955,6 +1955,7 @@ font-family: var(--button-font);
     .cart_items tr td:nth-child(3){
         font-size: 14px;
         align-items: center;
+        justify-content: center;
         padding: 5px;
     }
     .cart_items tr {
@@ -3517,9 +3518,117 @@ font-size: 9px;
 
     </div>
     <!-- single product open window close -->
+<style>
+    .smneu-bar{
+        width: 200px;
+        height: 100vh;
+       border-right: 1px solid rgb(117, 117, 117);
+       background-color: white;
+        grid-template-rows: 50px 1fr;
+        position: absolute;
+        top: 60px;
+        z-index: 99;
+        display:grid;
+        transform: translateX(-200px);
+        transition: .5s ease-in-out;
+      
+        
+    }
+    .slideAnim{
+        transform: translateX(0px);
+        transition: .5s ease-in-out;
+    }
+ 
+    .smenu-close button {
+        position: absolute;
+        right: 10px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+      
+        
+    }
+    .smenu-close button i{
+        font-size: 20px;
+    }
+
+
+    .smenus-itmes ul{
+        list-style: none;
+       text-align: center;
+    }
+    .smenus-itmes ul li{
+        display: block;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .smenus-itmes ul li a{
+        font-family: var(--head-font);
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+    }
+     .smenus-itmes ul li::after {
+        content: "";
+        width: 0%;
+        height: 3px;
+        display: block;
+        background-color: var(--main-color);
+        left: 0;
+        top: 0;
+        transition: .5s;
+    }
+
+    .smenus-itmes ul li:nth-child(1)::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        display: block;
+        background-color: var(--main-color);
+        left: 0;
+        top: 0;
+        transition: .5s;
+    }
+
+    .smenus-itmes ul li:hover::after {
+        width: 100%;
+        transition: .5s;
+    }
+</style>
+
+    <div class="short-menu">
+        <div class="smneu-bar">
+           
+            <div class="smenus-itmes">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 
+<script>
+    let menubtn= document.getElementsByClassName('fa-bars')[0];
+    let smenubar= document.getElementsByClassName('smneu-bar')[0];
 
+    menubtn.addEventListener('click',()=>{
+ 
+        smenubar.classList.toggle('slideAnim');
+    })
+    // $(document).ready(function()
+    // {
+    //     $('.fa-bars').on('click',function()
+    //     {
+    //         $('.smenu-bar').fadeToggle(2000);
+    //     })
+    // })
+</script>
 
 <style>
     .subhadcontent{
@@ -4564,9 +4673,6 @@ font-size: 9px;
 
 
 </script>
-<style>
-  
 
-</style>
 
 </html>
