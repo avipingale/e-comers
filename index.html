@@ -22,6 +22,7 @@
         margin: 0px;
         padding: 0px;
         box-sizing: border-box;
+        user-select: none;
     }
 
     :root {
@@ -1003,7 +1004,7 @@ font-family: var(--button-font);
         display: none;
     }
 
-    .content-topic ul, .shortcontent-topic ul {
+    .content-topic ul{
         position: relative;
         list-style: none;
         display: flex;
@@ -1012,7 +1013,7 @@ font-family: var(--button-font);
         color: var(--main-colr);
     }
 
-    .content-topic ul li a ,.shortcontent-topic ul li a{
+    .content-topic ul li a{
         font-size: larger;
         text-decoration: none;
         color: var(--main-color);
@@ -1023,8 +1024,12 @@ font-family: var(--button-font);
         color: var(--main-color);
         text-align: right;
     }
+    .ssearch{
+          display: none;
+        }
+                    
 
-    .content-topic ul li ul,.shortcontent-topic ul li ul {
+    .content-topic ul li ul {
         position: absolute;
         z-index: 99;
         display: block;
@@ -1034,22 +1039,22 @@ font-family: var(--button-font);
         transition: .5s;
     }
 
-    .content-topic ul li:hover ul,.shortcontent-topic ul li:hover ul {
+    .content-topic ul li:hover ul {
         display: block;
         color: var(--main-color);
         transition: .7s;
     }
 
-    .content-topic ul li ul li,.shortcontent-topic ul li ul li{
+    .content-topic ul li ul li{
         padding: 5px 2px;
     }
 
-    .content-topic ul li ul li a,.shortcontent-topic ul li ul li a {
+    .content-topic ul li ul li a{
         color: black;
         font-size: 13px;
     }
 
-    .content-topic ul li ul li a:hover,.shortcontent-topic ul li ul li a:hover {
+    .content-topic ul li ul li a:hover{
         color: var(--main-color);
     }
 
@@ -1979,11 +1984,16 @@ font-family: var(--button-font);
         grid-template-columns: 40px repeat(1, 1fr) 40px;
     
     }
-    
-    .shortcontent-topic ul {
-      font-size: 12px;
-      justify-content: center;
+    .content-topic{
+        font-size: 12px;
     }
+    .ssearch{
+         display: flex;
+
+     }
+     .bsearch{
+       display: none;
+      }
     /* front section */
 
     .section {
@@ -3023,20 +3033,7 @@ font-size: 9px;
             </div>
           
             <div class="hcon searchl">
-                <style>
-                    .ssearch{
-                        display: none;
-                    }
-                    @media screen and (max-width:576px) {
-                        .ssearch{
-                            display: flex;
-
-                        }
-                        .bsearch{
-                            display: none;
-                        }
-                    }
-                </style>
+              
                 <div class="searchBar bsearch">
                     <input type="search" name="" id="" placeholder="search..." class="search-inputstyle">
                     <button type="button"> <i class="fa-solid fa-magnifying-glass"></i></button>
