@@ -999,8 +999,11 @@ font-family: var(--button-font);
         justify-content: center;
         font-family: var(--head-font);
     }
+    .shortcontent-topic{
+        display: none;
+    }
 
-    .content-topic ul {
+    .content-topic ul, .shortcontent-topic ul {
         position: relative;
         list-style: none;
         display: flex;
@@ -1009,7 +1012,7 @@ font-family: var(--button-font);
         color: var(--main-colr);
     }
 
-    .content-topic ul li a {
+    .content-topic ul li a ,.shortcontent-topic ul li a{
         font-size: larger;
         text-decoration: none;
         color: var(--main-color);
@@ -1021,7 +1024,7 @@ font-family: var(--button-font);
         text-align: right;
     }
 
-    .content-topic ul li ul {
+    .content-topic ul li ul,.shortcontent-topic ul li ul {
         position: absolute;
         z-index: 99;
         display: block;
@@ -1031,22 +1034,22 @@ font-family: var(--button-font);
         transition: .5s;
     }
 
-    .content-topic ul li:hover ul {
+    .content-topic ul li:hover ul,.shortcontent-topic ul li:hover ul {
         display: block;
         color: var(--main-color);
         transition: .7s;
     }
 
-    .content-topic ul li ul li {
+    .content-topic ul li ul li,.shortcontent-topic ul li ul li{
         padding: 5px 2px;
     }
 
-    .content-topic ul li ul li a {
+    .content-topic ul li ul li a,.shortcontent-topic ul li ul li a {
         color: black;
         font-size: 13px;
     }
 
-    .content-topic ul li ul li a:hover {
+    .content-topic ul li ul li a:hover,.shortcontent-topic ul li ul li a:hover {
         color: var(--main-color);
     }
 
@@ -1976,9 +1979,10 @@ font-family: var(--button-font);
         grid-template-columns: 40px repeat(1, 1fr) 40px;
     
     }
-
-    .content-topic ul {
+    
+    .shortcontent-topic ul {
       font-size: 12px;
+      justify-content: center;
     }
     /* front section */
 
@@ -3017,11 +3021,29 @@ font-size: 9px;
 
                 </ul>
             </div>
+          
             <div class="hcon searchl">
+                <style>
+                    .ssearch{
+                        display: none;
+                    }
+                    @media screen and (max-width:576px) {
+                        .ssearch{
+                            display: flex;
 
-                <div class="searchBar">
+                        }
+                        .bsearch{
+                            display: none;
+                        }
+                    }
+                </style>
+                <div class="searchBar bsearch">
                     <input type="search" name="" id="" placeholder="search..." class="search-inputstyle">
                     <button type="button"> <i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="searchBar ssearch">
+                    <input type="search" name="" id="" placeholder="search..." class="search-inputstyle">
+                    <button type="button"  class='sbsearch'> <i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
         </div>
@@ -3624,13 +3646,7 @@ font-size: 9px;
  
         smenubar.classList.toggle('slideAnim');
     })
-    // $(document).ready(function()
-    // {
-    //     $('.fa-bars').on('click',function()
-    //     {
-    //         $('.smenu-bar').fadeToggle(2000);
-    //     })
-    // })
+  
 </script>
 
 <style>
@@ -3642,7 +3658,11 @@ font-size: 9px;
     
     .search-borderstyle-size{
         width: 100%;
-       
+        border: 2px solid var(--main-color);
+        border-radius: 7px;
+        transition: .5s ease-in-out;
+        opacity: 1;
+        
     }
 </style>
 
@@ -4370,46 +4390,9 @@ font-size: 9px;
 
     // single product system close
 
-    let ww=  window.innerWidth;
-    if(ww<=576){
-        let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
-          
-            searchbtn.removeEventListener('click',searcbars);
-            
-            searchbtn.addEventListener('click',small_searcbar);
-    let searchbar = document.getElementsByClassName('searchBar')[0];
-    searchbar.classList.toggle("search-borderstyle");
 
 
-      }
-      else{
-        let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
 
-        document.getElementsByClassName('hcon content-topic')[0].style.display="block";
-            document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='40px 1fr 40px';
-            searchbtn.addEventListener('click',searcbars);
-            searchbtn.removeEventListener('click',small_searcbar);
-      }
-    window.addEventListener('resize',function(){
-        var winWidth = window.innerWidth;
-        if(winWidth<576)
-        {
-            
-           
-            let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
-          
-            searchbtn.removeEventListener('click',searcbars);
-            
-            searchbtn.addEventListener('click',small_searcbar);
-            
-        }else{
-            
-            document.getElementsByClassName('hcon content-topic')[0].style.display="block";
-            document.getElementsByClassName('hedcontent')[0].style.gridTemplateColumns='40px 1fr 40px';
-            searchbtn.addEventListener('click',searcbars);
-            searchbtn.removeEventListener('click',small_searcbar);
-        }
-    })
 
 
 
@@ -4417,6 +4400,7 @@ font-size: 9px;
     
     // search bar 
     let searchbtn = document.getElementsByClassName('searchBar')[0].children[1];
+  
     searchbtn.style.opacity = "1";
     let searchbar = document.getElementsByClassName('searchBar')[0];
     searchbtn.addEventListener('click',searcbars);
@@ -4424,20 +4408,26 @@ font-size: 9px;
         searchbar.classList.toggle("search-borderstyle");
     }
 
+    let small_searchbtn = document.getElementsByClassName('sbsearch')[0];
+    small_searchbtn.addEventListener('click',small_searcbar);
+
     function small_searcbar()
     {
+     
         let searchbar = document.getElementsByClassName('searchBar')[0];
         searchbar.classList.toggle("search-borderstyle");
         var menu = document.getElementsByClassName('hcon content-topic')[0];
         if(menu.style.display=="none")
         {
-            menu.style.display="block";
+            menu.style.display="flex";
         }else{
             menu.style.display="none";
 
         }
+        
+
         var frames = document.getElementsByClassName('hedcontent')[0];
-        var search = document.getElementsByClassName('searchBar')[0];
+        var search = document.getElementsByClassName('ssearch')[0];
         search.classList.toggle('search-borderstyle-size');
         frames.classList.toggle('subhadcontent');
       
